@@ -6,7 +6,7 @@ const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: 'https://test-server-react.onrender.com',
+  origin: 'https://test-server-fe.onrender.com',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
