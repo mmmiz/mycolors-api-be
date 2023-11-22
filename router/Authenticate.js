@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 const User = require('../models/UserData');
 const jwt = require('jsonwebtoken');
 const { verifyToken, SECRET_KEY } = require('../middleware/middleware');
-const crypto = require('crypto');
-const nodemailer = require('nodemailer');
+// const crypto = require('crypto');
+// const nodemailer = require('nodemailer');
 
 const router = express.Router();
 require('dotenv').config();
