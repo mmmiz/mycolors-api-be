@@ -1,11 +1,21 @@
-// server.js
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
+
+mongoose.connect(process.env.MONGO_DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log("DB Connected");
+});
 
 app.use(cors({
   origin: 'https://mycolors-app.onrender.com',
