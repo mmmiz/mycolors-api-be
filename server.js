@@ -8,7 +8,7 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: 'https://test-server-fe.onrender.com',
+  origin: 'https://mycolors-app.onrender.com',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
