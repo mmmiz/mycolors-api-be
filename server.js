@@ -1,6 +1,3 @@
-
-<<<<<<< HEAD
-
 require('dotenv').config();
 
 const express = require('express');
@@ -55,5 +52,4 @@ app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-=======
->>>>>>> origin/main
+
