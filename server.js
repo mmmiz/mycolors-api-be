@@ -9,6 +9,11 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
 
+const Authenticate = require('./router/Authenticate');
+const allColorRoute = require('./router/allColorRoute');
+
+
+// ---------- 
 mongoose.connect(process.env.MONGO_DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -23,11 +28,13 @@ app.use(cors({
   credentials: true,
 }));
 
-
 app.use(bodyParser.json());
 
-let serverMessage = 'Hello from the server!';
+app.use('/auth', authenticate);
+app.use('/all', allColorRoute);
 
+
+let serverMessage = 'Hello from the server!';
 app.get('/api/message', (req, res) => {
   res.json({ message: serverMessage });
 });
@@ -38,10 +45,8 @@ app.post('/api/message', (req, res) => {
   res.json({ message: serverMessage });
 });
 
-
 // Serve static files from the 'build' directory
 app.use(express.static(path.join(__dirname, 'build')));
-
 
 // Catch-all route to serve the 'index.html' file
 app.get('*', (req, res) => {
