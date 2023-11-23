@@ -30,7 +30,7 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-app.use('/auth', authenticate);
+app.use('/auth', Authenticate);
 app.use('/all', allColorRoute);
 
 
