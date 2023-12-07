@@ -10,7 +10,6 @@ const { verifyToken, SECRET_KEY } = require('../middleware/middleware');
 const router = express.Router();
 require('dotenv').config();
 
-
 // Router settings 
 router.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
